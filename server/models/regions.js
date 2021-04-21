@@ -1,6 +1,5 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('regions', {
+const regions = (sequelize, DataTypes)=> {
+  const Regions= sequelize.define('regions', {
     region_id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
@@ -26,4 +25,7 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  return Regions;
 };
+
+export default regions;
