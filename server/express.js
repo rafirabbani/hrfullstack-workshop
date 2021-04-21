@@ -40,6 +40,8 @@ app.use(async (req, res, next) => {
 });
 
 app.use('/api/regions', routes.regionRoute)
+app.use('/api/upload', routes.UploadDownloadRoute)
+app.use('/api/employees', routes.employeesRoute)
 
 
 // Catch unauthorised errors
