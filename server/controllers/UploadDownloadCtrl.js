@@ -53,7 +53,7 @@ const uploadMultipart = async (req,res,next)=>{
 
     form
          .on('fileBegin', (keyName, file) => {
-            file.path = pathDir + keyName + file.name;
+            file.path = pathDir + keyName + '_' + file.name;
         }) 
         .on('field', (keyName, value) => {
             fields.push({ keyName, value });
@@ -61,8 +61,8 @@ const uploadMultipart = async (req,res,next)=>{
         .on('file', (keyName, file) => {
             const fileName = file.name;
             files.push({ keyName, fileName });
-             const json = file.toJSON();
-            console.log(json) 
+            /* const json = file.toJSON();
+            console.log(json)  */
         })
         .on('end', () => {
             console.log('-> upload to storage done');

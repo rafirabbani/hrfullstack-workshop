@@ -9,6 +9,7 @@ const update = async (req, res) => {
 
 const create = async (req, res) => {
     const data = await req.dataFiles;
+    return res.send(data);
 }
 
 const findAll = async (req, res) => {
@@ -16,14 +17,20 @@ const findAll = async (req, res) => {
     return res.send(result);
 }
 
-const bulkCreate = async (req, res) => {
-    const data = await req.dataFiles  
-     return res.send(data);
+const bulkImage = async (req, res) => {
+    const data = await req.dataFiles
+    console.log(data);
+    for(let i = 0; i < data.files.length; i++) {
+        req.context.models.Employees.update(
+            { profile_picture : data.files[i].fileName}, {returning: true, where: {employee_id: data.fields[i].value}}
+        )
+    }
+    return res.send(data);
 }
 
 export default {
     update,
     create,
     findAll,
-    bulkCreate
+    bulkImage
 }

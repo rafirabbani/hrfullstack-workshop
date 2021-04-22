@@ -2,9 +2,13 @@ import { sequelize } from '../../config/config-db'
 
 // select *
 
-const findAll = async (req,res) => {
-    const regions = await req.context.models.Regions.findAll();
-    return res.send(regions)
+const findAll = async (req, res) => {
+    const regions = await req.context.models.Regions.findAll({
+        include: [{
+            model: req.context.models.Countries
+        }]
+    });
+    return res.send(regions);
 }
 
 // select region by id
