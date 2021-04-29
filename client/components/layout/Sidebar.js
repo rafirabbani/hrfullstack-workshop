@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { HomeIcon, GlobeIcon, FlagIcon, UsersIcon} from '@heroicons/react/solid'
+
 
 export default function Sidebar() {
     const [collapseShow, setCollapseShow] = React.useState("hidden");
     return (
         <>
-            <nav className="md:left-0 md:block md:fixed md:top-10  md:bottom-0 md:w-64 py-18 px-6">
+            <nav className="md:left-0 md:block md:fixed md:top-10  md:bottom-0 md:w-42 py-18 px-6 bg-green-100">
                 <div className="md:flex-col md:items-stretch md:min-h-18 md:flex-no-wrap px-0  items-center justify-between w-full mx-auto">
 
                     {/* <h6 className="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-5 pb-4 no-underline">
@@ -15,60 +17,51 @@ export default function Sidebar() {
 
                     <ul className="md:flex-col md:min-w-full flex flex-col list-none">
                     <li className="items-center">
-                            <Link
+                        <Link
                                 className={
-                                    "text-xs uppercase py-3 font-bold block "
+                                    "text-l py-3 block font-bold mt-4"
                                 }
                                 to="/hr/dashboard/"
                             >
-                                <i
-                                    className={
-                                        "fas fa-tv mr-2 text-sm "
-                                    }
-                                ></i>{" "}
-                                Dashboard
-                            </Link>
+                                <i className={
+                                        "fas fa-tv mr-2 text-l inline-flex items-center not-italic"
+                                    }><HomeIcon className={'h-5 w-5 text-gray-500 m-1'}/>Dashboard</i>{""}                        
+                        </Link>
                         </li>
                         <li className="items-center">
                             <Link
                                 className={
-                                    "text-xs uppercase py-3 font-bold block "
+                                    "text-l py-3 block font-bold mt-4"
                                 }
                                 to="/hr/regions/"
                             >
                                 <i
                                     className={
-                                        "fas fa-tv mr-2 text-sm "
+                                        "fas fa-tv mr-2 text-l inline-flex items-center not-italic "
                                     }
-                                ></i>{" "}
-                                Regions
+                                ><GlobeIcon className='h-5 w-5 text-gray-500 m-1'/>Regions</i>{""}
+                                
                             </Link>
                             <Link
                                 className={
-                                    "text-xs uppercase py-3 font-bold block "
+                                    "text-l py-3 block font-bold mt-4"
                                 }
                                 to="/hr/countries/"
                             >
-                                <i
-                                    className={
-                                        "fas fa-tv mr-2 text-sm "
-                                    }
-                                ></i>{" "}
-                                Countries
-                            </Link>
-                            <Link
+                                <i className={
+                                        "fas fa-tv mr-2 text-l inline-flex items-center not-italic"
+                                    }><FlagIcon className={'h-5 w-5 text-gray-500 m-1'}/>Countries</i>{""}                        
+                        </Link>
+                        <Link
                                 className={
-                                    "text-xs uppercase py-3 font-bold block "
+                                    "text-l py-3 block font-bold mt-4"
                                 }
                                 to="/hr/employees/"
                             >
-                                <i
-                                    className={
-                                        "fas fa-tv mr-2 text-sm "
-                                    }
-                                ></i>{" "}
-                                Employees
-                            </Link>
+                                <i className={
+                                        "fas fa-tv mr-2 text-l inline-flex items-center not-italic"
+                                    }><UsersIcon className={'h-5 w-5 text-gray-500 m-1'}/>Employees</i>{""}                        
+                        </Link>
                         </li>
                     </ul>
                 </div>
