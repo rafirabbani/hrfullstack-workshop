@@ -186,7 +186,6 @@ export default function MainLayout(props) {
         </div>
       </main>
         </div>
-
       </div>
     </div>
   )
