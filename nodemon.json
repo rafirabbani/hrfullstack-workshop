@@ -1,0 +1,8 @@
+{
+    "verbose": false,
+    "watch": [
+      "./server"
+    ],
+     "exec" : "babel-node ./server/server.js",
+     "exec___": "webpack --mode=development --config webpack.config.server.js && node ./dist/server.generated.js"
+  }
