@@ -1,9 +1,0 @@
-/node_modules/
-/dist/
-/data/
-npm-debug.log
-/schema-reverse/
-/uploads/
-/batch9-hrfullstack/
-nodemon.json
-.gitignore
