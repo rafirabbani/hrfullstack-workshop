@@ -175,7 +175,7 @@ export default function MainLayout(props) {
           </>
         )}
       </Disclosure>
-      <div class='grid grid-cols-6 gap-4'>
+      <div className='grid grid-cols-6 gap-4'>
         <div><Sidebar/></div>
         <div className='col-span-5'>
         <main>

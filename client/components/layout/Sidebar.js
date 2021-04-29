@@ -56,6 +56,19 @@ export default function Sidebar() {
                                 ></i>{" "}
                                 Countries
                             </Link>
+                            <Link
+                                className={
+                                    "text-xs uppercase py-3 font-bold block "
+                                }
+                                to="/hr/employees/"
+                            >
+                                <i
+                                    className={
+                                        "fas fa-tv mr-2 text-sm "
+                                    }
+                                ></i>{" "}
+                                Employees
+                            </Link>
                         </li>
                     </ul>
                 </div>
