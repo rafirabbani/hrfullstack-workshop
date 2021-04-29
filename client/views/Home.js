@@ -1,10 +1,9 @@
 import React from 'react'
 
-
 export default function Home() {
-  return (
-    <>
-      
-    </>
-  )
+    return (
+        <div className="text-3xl font-bold">
+            Welcome Home
+        </div>
+    )
 }

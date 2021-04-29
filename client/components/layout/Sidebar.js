@@ -34,7 +34,7 @@ export default function Sidebar() {
                                 className={
                                     "text-xs uppercase py-3 font-bold block "
                                 }
-                                to="/hr/region/"
+                                to="/hr/regions/"
                             >
                                 <i
                                     className={
@@ -42,6 +42,19 @@ export default function Sidebar() {
                                     }
                                 ></i>{" "}
                                 Regions
+                            </Link>
+                            <Link
+                                className={
+                                    "text-xs uppercase py-3 font-bold block "
+                                }
+                                to="/hr/countries/"
+                            >
+                                <i
+                                    className={
+                                        "fas fa-tv mr-2 text-sm "
+                                    }
+                                ></i>{" "}
+                                Countries
                             </Link>
                         </li>
                     </ul>
