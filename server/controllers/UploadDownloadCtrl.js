@@ -17,14 +17,15 @@ const upload = async (req, res,next) => {
     form.parse(req);
     form
         .on('fileBegin', (keyName, file) => {
-            console.log(keyName, file);
+            //console.log(keyName)
+           // console.log(file);
             file.path = pathDir + file.name;
         })
         .on('field', (keyName, value) => {
-            console.log(keyName, value);
+            console.log(file.path)
         })
         .on('file', (keyName, file) => {
-            console.log(keyName, file.name);
+            
             req.fileName = file.name;
         })
         .on('end', () => {
@@ -56,13 +57,14 @@ const uploadMultipart = async (req,res,next)=>{
             file.path = pathDir + keyName + '_' + file.name;
         }) 
         .on('field', (keyName, value) => {
+            //const fileMain = 
             fields.push({ keyName, value });
         })
-        .on('file', (keyName, file) => {
+        .on('file', (fileId, file) => {
             const fileName = file.name;
-            files.push({ keyName, fileName });
-            /* const json = file.toJSON();
-            console.log(json)  */
+            const filePath = file.path;
+            const fileSize = file.size;
+            files.push({ fileId, fileName, filePath, fileSize});
         })
         .on('end', () => {
             console.log('-> upload to storage done');

@@ -50,11 +50,11 @@ const changeRegionName = async (req,res) => {
 
 // delete a region
 
-const deleteRegion = async (req,res) => {
-    await req.context.models.Regions.destroy({
-        where: {region_id: req.params.id}
+const deleteRegion = async (req, res) => {
+    const result = await req.context.models.Regions.destroy({
+          where: { region_id: req.params.id }
     });
-    return res.send('Data Deleted')
+    return res.send('deleted ' + result + ' row(s)')    
 }
 
 // raw query select by id
