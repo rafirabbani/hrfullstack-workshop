@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from "react-router-dom";
 import MainLayout from './views/MainLayout'
 import Dashboard from './views/Dashboard';
-import Regions from './views/Regions'
+import Regions from './views/Regions/Regions'
 import Countries from './views/Countries'
 import Home from './views/Home'
 import Employees from './views/Employees'

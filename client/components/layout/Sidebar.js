@@ -7,7 +7,7 @@ export default function Sidebar() {
     const [collapseShow, setCollapseShow] = React.useState("hidden");
     return (
         <>
-            <nav className="md:left-0 md:block md:fixed md:top-9  md:bottom-0 md:w-40 py-18 px-6 bg-green-100">
+            <nav className="md:left-0 md:block md:fixed md:top-10  md:bottom-0 md:w-40 py-18 px-6">
                 <div className="md:flex-col md:items-stretch md:min-h-18 md:flex-no-wrap px-0  items-center justify-between w-full mx-auto">
 
                     {/* <h6 className="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-5 pb-4 no-underline">
