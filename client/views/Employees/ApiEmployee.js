@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getAll = async () => {
     try {
-        let result = await axios.get(`/api/regions`);
+        let result = await axios.get(`/api/employees`);
         return await result.data
     }
     catch (err) {
@@ -10,9 +10,9 @@ const getAll = async () => {
     }
 }
 
-const create = async (region) => {
+const create = async (employee) => {
     try {
-        let result = await axios.post(`/api/regions`, region);
+        let result = await axios.post(`/api/employees`, employee);
         return result
         
     }
@@ -21,9 +21,9 @@ const create = async (region) => {
     }
 }
 
-const edit = async (region) => {
+const edit = async (employee) => {
     try {
-        let result = await axios.put(`/api/regions/${region.region_id}`, region)
+        let result = await axios.put(`/api/employees/${employee.employee_id}`, employee)
         return result
     }
     catch (err) {
@@ -31,9 +31,10 @@ const edit = async (region) => {
     }
 }
 
-const destroy = async (region) => {
+const destroy = async (employee) => {
+    console.log(employee)
     try {
-        let result = await axios.delete(`/api/regions/${region}`)
+        let result = await axios.delete(`/api/employees/${employee}`)
         return result
     }
     catch (err) {

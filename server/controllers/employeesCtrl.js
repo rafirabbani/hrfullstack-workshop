@@ -7,14 +7,24 @@ const update = async (req, res) => {
     return res.send(result);
 }
 
-const create = async (req, res) => {
-    const data = await req.dataFiles;
-    return res.send(data);
+const createEmployee = async (req, res) => {
+    const result = await req.context.models.Employees.create({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        phone_number: req.body.phone_number,
+        hire_date: req.body.hire_date,
+        job_id: req.body.job_id,
+        salary: req.body.salary,
+        manager_id: req.body.manager_id,
+        department_id: req.body.department_id,
+
+    });
+    return res.send(result)
 }
 
 const findAll = async (req, res) => {
     const result = await req.context.models.Employees.findAll();
-    console.log(result)
     return res.send(result);
 }
 
@@ -31,11 +41,18 @@ const bulkImage = async (req, res) => {
 }
 
 const editEmployee = async (req,res) => {
-    const {salary,email} = req.body
+    const {first_name, last_name, salary,email, job_id, department_id, manager_id, phone_number, hire_date, } = req.body
     const result = await req.context.models.Employees.update(
         {
+            first_name: first_name,
+            last_name: last_name,
             salary: salary,
-            email: email
+            email: email,
+            job_id: job_id,
+            department_id: department_id,
+            manager_id: manager_id,
+            phone_number: phone_number,
+            hire_date: hire_date
         },
         {
             returning: true, 
@@ -47,10 +64,18 @@ const editEmployee = async (req,res) => {
     return res.send(result)
 }
 
+const deleteEmployee = async (req, res) => {
+    const result = await req.context.models.Employees.destroy({
+        where: {employee_id: req.params.id}
+    });
+    return res.send('deleted ' + result + ' row(s)')   
+}
+
 export default {
     update,
-    create,
+    createEmployee,
     findAll,
     bulkImage,
-    editEmployee
+    editEmployee,
+    deleteEmployee
 }
