@@ -9,7 +9,8 @@ import Employees from './views/Employees/Employees'
 
 
 const MainRouter = () => {
-  return (<>
+  return (
+  <>
     <Switch>
       <Route exact path ='/hr'><Home/></Route>
       <MainLayout>

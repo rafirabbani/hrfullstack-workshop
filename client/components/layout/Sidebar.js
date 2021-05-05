@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from "react-router-dom";
-import { HomeIcon, GlobeIcon, FlagIcon, UsersIcon} from '@heroicons/react/solid'
+import { Menu, Transition } from '@headlessui/react'
+import { HomeIcon, GlobeIcon, FlagIcon, UsersIcon, ChevronDownIcon} from '@heroicons/react/solid'
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 
 export default function Sidebar() {
-
-    const [collapseShow, setCollapseShow] = React.useState("hidden");
     return (
         <>
             <nav className="md:left-0 md:block md:fixed md:top-0  md:bottom-0 md:w-48 py-18 px-6 bg-blue-100">
@@ -62,8 +65,7 @@ export default function Sidebar() {
                                 <i className={
                                         "text-l flex items-center not-italic"
                                     }><UsersIcon className={'h-5 w-5 text-gray-500 mr-2'}/>Employees</i>{""}                        
-                        </Link>
-                        
+                        </Link>                     
                         </li>
                     </ul>
                 </div>

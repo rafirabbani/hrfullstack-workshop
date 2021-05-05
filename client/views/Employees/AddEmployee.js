@@ -116,7 +116,7 @@ export default function AddEditRegion(props) {
                           />
                         </div>
                         <div className='block mt-5'><label>Email</label></div>
-                        <div className='block mt-1'><input className='rounded-lg'id='email' name='email' 
+                        <div className='block mt-1'><input className='rounded-lg w-72'id='email' name='email' 
                             type='text' 
                             onChange={handleChange('email')} 
                             placeholder={'e.g. john@mymail.com'}

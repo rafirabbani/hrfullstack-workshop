@@ -3,9 +3,7 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import compress from 'compression'
 import cors from 'cors'
-
 import helmet from 'helmet'
-
 import models from './models/index'
 import routes from './routes/indexRoute'
 
